@@ -30,7 +30,7 @@ export default function Login() {
           <h1 style={{ marginTop: 0 }}>С возвращением в виноградник</h1>
           {demo && (
             <p className="muted">
-              Демо-среда — данные хозяйства «Усадьба Качинская», Севастополь.
+              Демо-среда — данные хозяйства «Винодельня Акчурина», Терновка.
               Подойдёт любая почта и пароль.
             </p>
           )}
@@ -71,7 +71,7 @@ export default function Login() {
             «Урожай собрали на три дня раньше среднего по региону — и это сделало вино».
           </blockquote>
           <div style={{ fontWeight: 600 }}>Ирина Соколова</div>
-          <div className="small muted">Агроном · Усадьба Качинская, Севастополь</div>
+          <div className="small muted">Агроном · Винодельня Акчурина, Терновка</div>
           <div style={{ display: 'flex', gap: 8, marginTop: 18, flexWrap: 'wrap' }}>
             <span className="badge badge-green">Живая погода</span>
             <span className="badge badge-green">Модели GDD</span>

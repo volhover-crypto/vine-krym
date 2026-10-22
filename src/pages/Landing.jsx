@@ -120,7 +120,7 @@ export default function Landing() {
       </section>
 
       <div className="container stat-strip" id="stats">
-        <div><div className="num">150+</div><div className="cap">гектаров в демо-портфеле</div></div>
+        <div><div className="num">250+</div><div className="cap">гектаров в демо-портфеле</div></div>
         <div><div className="num">1 842</div><div className="cap">GDD отслеживается за сезон</div></div>
         <div><div className="num">36 ч</div><div className="cap">заблаговременность оповещений</div></div>
         <div><div className="num">99,9%</div><div className="cap">доступность платформы</div></div>
@@ -162,7 +162,7 @@ export default function Landing() {
         <div className="section-head">
           <div className="eyebrow">Живые данные</div>
           <h2>Погода хозяйства — прямо сейчас</h2>
-          <p>Демо показывает реальные данные Open-Meteo для Качинской долины, Севастополь.</p>
+          <p>Демо показывает реальные данные Open-Meteo для хозяйства по умолчанию — {DEFAULT_REGION.name}, {DEFAULT_REGION.location}.</p>
         </div>
         <LiveWeatherBadge />
       </section>
@@ -221,10 +221,9 @@ export default function Landing() {
             <div>
               <h4>Демо-хозяйства</h4>
               <ul>
-                <li>Усадьба Качинская · Севастополь</li>
-                <li>Бахчисарайский сад · Бахчисарай</li>
-                <li>Судакская терраса · Судак</li>
-                <li>Алуштинский амфитеатр · Алушта</li>
+                <li>Винодельня Акчурина · Терновка</li>
+                <li>UPPA Winery · Родное</li>
+                <li>Золотая Балка · Балаклава</li>
               </ul>
             </div>
           </div>

@@ -1,55 +1,47 @@
 // Хозяйства и блоки демо-данных (аналог vinealytics_db в localStorage
-// оригинала; координаты — реальные центры винодельческих зон Крыма)
+// оригинала; точки расчёта — реальные винодельни Крыма)
 
 export const REGIONS = [
   {
     id: 1,
-    name: 'Усадьба Качинская',
-    location: 'Севастополь, Качинская долина',
-    latitude: 44.633,
-    longitude: 33.533,
-    acres: 52.4,
+    name: 'Винодельня Акчурина',
+    location: 'Терновка, Севастополь',
+    latitude: 44.598,
+    longitude: 33.705,
+    acres: 28.6,
   },
   {
     id: 2,
-    name: 'Бахчисарайский сад',
-    location: 'Бахчисарай, предгорья',
-    latitude: 44.75,
-    longitude: 33.86,
-    acres: 38.0,
+    name: 'UPPA Winery',
+    location: 'Родное, Бахчисарайский район',
+    latitude: 44.718,
+    longitude: 33.938,
+    acres: 45.0,
   },
   {
     id: 3,
-    name: 'Судакская терраса',
-    location: 'Судак, побережье',
-    latitude: 44.85,
-    longitude: 35.017,
-    acres: 27.5,
-  },
-  {
-    id: 4,
-    name: 'Алуштинский амфитеатр',
-    location: 'Алушта, юго-восточный склон',
-    latitude: 44.68,
-    longitude: 34.413,
-    acres: 41.2,
+    name: 'Золотая Балка',
+    location: 'Балаклавская долина, Севастополь',
+    latitude: 44.507,
+    longitude: 33.577,
+    acres: 180.5,
   },
 ]
 
 export const DEFAULT_REGION = REGIONS[0]
 
 export const BLOCKS = [
-  { id: 1, name: 'Блок А — Каберне Качи', varietal: 'Каберне Совиньон', acres: 12.3, plantingYear: 2005, rootstock: '110R', health: 95 },
-  { id: 2, name: 'Блок Б — Мерло холма', varietal: 'Мерло', acres: 8.1, plantingYear: 2010, rootstock: '101-14', health: 95 },
-  { id: 3, name: 'Блок В — Пино равнины', varietal: 'Пино Нуар', acres: 9.4, plantingYear: 2016, rootstock: 'SO4', health: 78 },
+  { id: 1, name: 'Блок А — Каберне Совиньон', varietal: 'Каберне Совиньон', acres: 12.3, plantingYear: 2005, rootstock: '110R', health: 95 },
+  { id: 2, name: 'Блок Б — Мерло', varietal: 'Мерло', acres: 8.1, plantingYear: 2010, rootstock: '101-14', health: 95 },
+  { id: 3, name: 'Блок В — Пино Нуар', varietal: 'Пино Нуар', acres: 9.4, plantingYear: 2016, rootstock: 'SO4', health: 78 },
   { id: 4, name: 'Блок Г — Ркацители', varietal: 'Ркацители', acres: 7.8, plantingYear: 2001, rootstock: 'Кобер 5ББ', health: 91 },
-  { id: 5, name: 'Блок Д — Кокур приморский', varietal: 'Кокур белый', acres: 5.2, plantingYear: 1998, rootstock: 'Рипариа', health: 88 },
+  { id: 5, name: 'Блок Д — Кокур белый', varietal: 'Кокур белый', acres: 5.2, plantingYear: 1998, rootstock: 'Рипариа', health: 88 },
 ]
 
 export const DEMO_USER = {
   name: 'Ирина',
   role: 'Агроном-виноградарь',
-  email: 'irina@kachinskaya.vine',
+  email: 'irina@ternovka.vine',
 }
 
 export const ALERTS = [
@@ -79,7 +71,7 @@ export const ALERTS = [
 export const ACTIVITY = [
   { id: 1, text: 'Синхронизация погоды завершена — живые данные Open-Meteo', time: 'меньше минуты назад' },
   { id: 2, text: 'Оповещение: риск первого заморозка в предгорьях', time: 'около 4 часов назад' },
-  { id: 3, text: 'Записано наблюдение — Блок А — Каберне Качи · Каберне Совиньон', time: 'около 6 часов назад' },
+  { id: 3, text: 'Записано наблюдение — Блок А — Каберне Совиньон', time: 'около 6 часов назад' },
   { id: 4, text: 'Рубеж GDD — сезонный итог превысил 1600 °C·дн (база 10)', time: 'около 8 часов назад' },
   { id: 5, text: 'Записано наблюдение — Блок Б — Мерло холма · Мерло', time: 'около 9 часов назад' },
 ]
@@ -104,16 +96,16 @@ export const TESTIMONIALS = [
   {
     quote: '«Дату сбора назвали за три недели и попали в 22% сахара день в день. Одна экономия на бригадах окупила год подписки.»',
     name: 'Ольга Примакова',
-    role: 'Главный агроном · «Качинская долина», Севастополь',
+    role: 'Главный агроном · Винодельня Акчурина, Терновка',
   },
   {
     quote: '«Оповещение о заморозке пришло на 40 минут раньше обычного. В апреле это разница между урожаем и катастрофой.»',
     name: 'Тимур Алиев',
-    role: 'Управляющий · «Бахчисарайский сад»',
+    role: 'Управляющий · Золотая Балка, Балаклава',
   },
   {
     quote: '«Квартальный отчёт для инвесторов раньше занимал две недели работы команды. Теперь это одна кнопка.»',
     name: 'Прия Анандина',
-    role: 'Финансовый директор · «Терры Крыма»',
+    role: 'Финансовый директор · UPPA Winery, Родное',
   },
 ]
