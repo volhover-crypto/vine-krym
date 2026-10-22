@@ -3,5 +3,7 @@ import { defineConfig } from 'vite'
 
 // https://vite.dev/config/
 export default defineConfig({
+  // относительный base — чтобы сборка работала в подпапке GitHub Pages /vine-krym/
+  base: './',
   plugins: [react()],
 })

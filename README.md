@@ -52,6 +52,12 @@ npm run build      # production-сборка в dist/
 4. `src/pages/*` — разница между маркетинговым лендингом и приложением-дашбордом.
 5. `src/components/GddChart.jsx` — наложение двух кривых в Recharts.
 
+## Публикация на GitHub Pages
+
+1. `main` — только исходники; правка `vite.config.js` (`base: './'`) обязательна и живёт в `main`.
+2. Публикация: `npm run build` → `git add -f dist && git commit` → `git subtree split --prefix dist -b gh-pages` → `git push -f origin gh-pages` → `git reset --hard HEAD~1` (сбрасывается только коммит с dist).
+3. CDN GitHub Pages кэширует `index.html` до ~10 минут — новый бандл по прямому URL доступен раньше.
+
 ## Отличия от оригинала
 
 - GSAP-анимации заменены CSS (`AnimatedTitle` на лендинге);
