@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import { DEMO_USER } from '../data/estate'
+import ThemeToggle from '../components/ThemeToggle'
 
 export default function Login() {
   const [params] = useSearchParams()
@@ -21,6 +22,7 @@ export default function Login() {
       <header className="landing-nav" style={{ position: 'static', marginBottom: 20 }}>
         <div className="inner">
           <Link to="/" className="brand"><img src="/grape.svg" width={24} alt="" /> ВинКрым</Link>
+          <ThemeToggle />
         </div>
       </header>
       <div className="login-wrap">

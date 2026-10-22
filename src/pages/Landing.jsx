@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { fetchForecast, describeCode, kmhToMs } from '../lib/openMeteo'
 import { fmtTemp, numRu } from '../lib/format'
 import { DEFAULT_REGION, BLOCKS, SEASON_STAGES, FEATURES, TESTIMONIALS } from '../data/estate'
+import ThemeToggle from '../components/ThemeToggle'
 
 // Заголовок с каскадным появлением букв (в оригинале — GSAP, здесь CSS)
 function AnimatedTitle({ lines }) {
@@ -92,6 +93,7 @@ export default function Landing() {
             <Link to="/#testimonials">Отзывы</Link>
           </nav>
           <div style={{ display: 'flex', gap: 10 }}>
+            <ThemeToggle />
             <Link to="/login" className="btn btn-ghost">Войти</Link>
             <Link to="/login?demo=true" className="btn btn-primary">Живое демо</Link>
           </div>

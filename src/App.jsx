@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import { HashRouter, Routes, Route, Navigate, useLocation, Link } from 'react-router-dom'
 import { DEFAULT_REGION } from './data/estate'
+import { ThemeProvider } from './hooks/useTheme'
 import Sidebar from './components/Sidebar'
+import ThemeToggle from './components/ThemeToggle'
 import Landing from './pages/Landing'
 import Login from './pages/Login'
 import Dashboard from './pages/Dashboard'
@@ -29,6 +31,7 @@ function AppShell() {
         <div className="topbar">
           <h1>{TITLES[pathname] ?? 'ВинКрым'}</h1>
           <button className="search-btn">Поиск блоков, отчётов, оповещений… ⌘K</button>
+          <ThemeToggle />
           <Link to="/" className="btn btn-ghost" style={{ padding: '7px 14px', fontSize: 13 }}>
             Выйти
           </Link>
@@ -48,13 +51,15 @@ function AppShell() {
 
 export default function App() {
   return (
-    <HashRouter>
-      <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/app/*" element={<AppShell />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
-    </HashRouter>
+    <ThemeProvider>
+      <HashRouter>
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/app/*" element={<AppShell />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </HashRouter>
+    </ThemeProvider>
   )
 }

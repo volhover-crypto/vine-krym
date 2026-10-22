@@ -1,4 +1,5 @@
-/* Дизайн-токены повторяют палитру оригинала (тёмная тема, зелёный акцент) */
+/* Дизайн-токены повторяют палитру оригинала (тёмная тема, зелёный акцент).
+   Светлая тема — собственная, в том же HSL-формате. */
 :root {
   --background: 210 24% 7%;
   --card: 216 21% 11%;
@@ -11,11 +12,29 @@
   --destructive: 0 63% 45%;
   --warning: 35 92% 55%;
   --radius: 0.625rem;
+  --primary-text: 147 60% 62%;
+  --shadow-card: 0 30px 80px -20px hsl(210 40% 3% / .9);
+  color-scheme: dark;
+}
+
+[data-theme='light'] {
+  --background: 210 25% 97%;
+  --card: 0 0% 100%;
+  --border: 216 14% 87%;
+  --foreground: 213 32% 14%;
+  --muted-foreground: 214 12% 42%;
+  --muted: 214 18% 93%;
+  --primary: 147 45% 32%;
+  --primary-foreground: 0 0% 100%;
+  --destructive: 0 60% 42%;
+  --warning: 32 85% 42%;
+  --primary-text: 147 55% 30%;
+  --shadow-card: 0 24px 60px -24px hsl(214 30% 30% / .35);
+  color-scheme: light;
 }
 
 * { box-sizing: border-box; }
 
-html { color-scheme: dark; }
 
 body {
   margin: 0;
@@ -54,7 +73,7 @@ button { font: inherit; cursor: pointer; }
   display: inline-block; padding: 2px 10px; border-radius: 999px;
   font-size: 11px; font-weight: 600; letter-spacing: .04em;
 }
-.badge-green { background: hsl(var(--primary) / .18); color: hsl(147 60% 62%); }
+.badge-green { background: hsl(var(--primary) / .18); color: hsl(var(--primary-text)); }
 .badge-red { background: hsl(var(--destructive) / .18); color: hsl(0 80% 70%); }
 .badge-amber { background: hsl(var(--warning) / .18); color: hsl(35 92% 65%); }
 
@@ -78,7 +97,7 @@ button { font: inherit; cursor: pointer; }
 
 .hero { padding: 72px 0 40px; text-align: center; position: relative; overflow: hidden; }
 .hero h1 { font-size: clamp(32px, 5vw, 52px); font-weight: 800; margin: 8px 0 14px; letter-spacing: -.02em; }
-.hero .kicker { color: hsl(147 60% 62%); font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: .12em; }
+.hero .kicker { color: hsl(var(--primary-text)); font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: .12em; }
 .hero p.lead { max-width: 640px; margin: 0 auto 26px; color: hsl(var(--muted-foreground)); font-size: 17px; }
 .hero .cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 .hero .fineprint { display: flex; gap: 18px; justify-content: center; margin-top: 14px; font-size: 12.5px; color: hsl(var(--muted-foreground)); flex-wrap: wrap; }
@@ -89,7 +108,7 @@ button { font: inherit; cursor: pointer; }
 
 .section { padding: 64px 0; }
 .section-head { text-align: center; max-width: 640px; margin: 0 auto 40px; }
-.section-head .eyebrow { color: hsl(147 60% 62%); font-size: 12.5px; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; }
+.section-head .eyebrow { color: hsl(var(--primary-text)); font-size: 12.5px; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; }
 .section-head h2 { font-size: clamp(24px, 3.4vw, 34px); font-weight: 800; margin: 8px 0 10px; letter-spacing: -.01em; }
 .section-head p { color: hsl(var(--muted-foreground)); }
 
@@ -105,7 +124,7 @@ button { font: inherit; cursor: pointer; }
   max-width: 780px; margin: 44px auto 0; position: relative;
   border: 1px solid hsl(var(--border)); border-radius: 14px;
   background: hsl(var(--card)); padding: 18px 20px;
-  box-shadow: 0 30px 80px -20px hsl(210 40% 3% / .9);
+  box-shadow: var(--shadow-card);
   text-align: left;
 }
 .mock .browser-bar {
@@ -122,7 +141,7 @@ button { font: inherit; cursor: pointer; }
 @media (max-width: 860px) { .app { grid-template-columns: 1fr; } .sidebar { display: none; } }
 
 .sidebar {
-  background: hsl(216 21% 11%);
+  background: hsl(var(--card));
   border-right: 1px solid hsl(var(--border));
   padding: 18px 14px; display: flex; flex-direction: column; gap: 6px;
   position: sticky; top: 0; height: 100vh;
@@ -133,7 +152,7 @@ button { font: inherit; cursor: pointer; }
   color: hsl(var(--muted-foreground));
 }
 .sidebar a.nav-link:hover { background: hsl(var(--muted)); color: hsl(var(--foreground)); }
-.sidebar a.nav-link.active { background: hsl(var(--primary) / .15); color: hsl(147 60% 62%); font-weight: 600; }
+.sidebar a.nav-link.active { background: hsl(var(--primary) / .15); color: hsl(var(--primary-text)); font-weight: 600; }
 .sidebar .nav-count {
   margin-left: auto; background: hsl(var(--destructive)); color: white;
   border-radius: 999px; font-size: 11px; padding: 0 7px; font-weight: 700;
@@ -141,7 +160,7 @@ button { font: inherit; cursor: pointer; }
 .sidebar .user { margin-top: auto; display: flex; gap: 10px; align-items: center; border-top: 1px solid hsl(var(--border)); padding-top: 14px; }
 .avatar {
   width: 34px; height: 34px; border-radius: 50%; flex: none;
-  background: hsl(var(--primary) / .25); color: hsl(147 60% 62%);
+  background: hsl(var(--primary) / .25); color: hsl(var(--primary-text));
   display: flex; align-items: center; justify-content: center; font-weight: 700;
 }
 
@@ -166,7 +185,7 @@ button { font: inherit; cursor: pointer; }
 .kpi .label { font-size: 12.5px; color: hsl(var(--muted-foreground)); }
 .kpi .value { font-size: 26px; font-weight: 700; letter-spacing: -.02em; }
 .kpi .delta { font-size: 12px; font-weight: 600; }
-.kpi .delta.up { color: hsl(147 60% 62%); }
+.kpi .delta.up { color: hsl(var(--primary-text)); }
 .kpi .delta.down { color: hsl(0 80% 70%); }
 
 /* --- Графики --- */
@@ -195,7 +214,7 @@ button { font: inherit; cursor: pointer; }
 
 .quote { border-left: 3px solid hsl(var(--primary)); padding-left: 14px; font-style: italic; }
 .persona-tab { border: 1px solid hsl(var(--border)); background: transparent; color: hsl(var(--muted-foreground)); border-radius: 999px; padding: 8px 16px; font-size: 13.5px; }
-.persona-tab.active { background: hsl(var(--primary) / .15); color: hsl(147 60% 62%); border-color: hsl(var(--primary) / .4); }
+.persona-tab.active { background: hsl(var(--primary) / .15); color: hsl(var(--primary-text)); border-color: hsl(var(--primary) / .4); }
 
 .login-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; min-height: calc(100vh - 60px); padding: 40px 20px; }
 @media (max-width: 860px) { .login-wrap { grid-template-columns: 1fr; } }
@@ -208,7 +227,7 @@ button { font: inherit; cursor: pointer; }
 .field input:focus { outline: 2px solid hsl(var(--primary) / .5); }
 
 .stat-strip { display: flex; gap: 40px; flex-wrap: wrap; justify-content: center; padding: 30px 0; }
-.stat-strip .num { font-size: 30px; font-weight: 800; color: hsl(147 60% 62%); }
+.stat-strip .num { font-size: 30px; font-weight: 800; color: hsl(var(--primary-text)); }
 .stat-strip .cap { font-size: 13px; color: hsl(var(--muted-foreground)); }
 
 .day-btn { text-align: left; background: hsl(var(--muted)); border: 1px solid hsl(var(--border)); border-radius: 10px; padding: 10px 12px; color: inherit; }
